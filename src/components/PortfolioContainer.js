@@ -1,13 +1,21 @@
 import React from "react";
 import Stock from "./Stock";
 
-function PortfolioContainer() {
+function PortfolioContainer({ port }) {
+  console.log("HERE", port);
   return (
     <div>
       <h2>My Portfolio</h2>
-      {
-        //render your portfolio stocks here
-      }
+      {port.map((p) => {
+        return (
+          <>
+            <h5>{p.name}</h5>
+            <p>
+              {p.ticker}: {p.price}
+            </p>
+          </>
+        );
+      })}
     </div>
   );
 }
